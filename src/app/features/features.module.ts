@@ -13,7 +13,6 @@ import { AnimalsModule } from './animals/animals.module';
     CommonModule,
     FeaturesRoutingModule,
     PersonModule,
-    AddressModule,
     AnimalsModule
   ]
 })

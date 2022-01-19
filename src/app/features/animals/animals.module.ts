@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AnimalsRoutingModule } from './animals-routing.module';
+import { FormComponent } from './form/form.component';
+import { ListComponent } from './list/list.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [FormComponent, ListComponent],
   imports: [
     CommonModule,
     AnimalsRoutingModule

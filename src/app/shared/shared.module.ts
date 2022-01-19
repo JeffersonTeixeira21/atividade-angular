@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AddressRoutingModule } from './address-routing.module';
+import { SharedRoutingModule } from './shared-routing.module';
 import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
-import { NgxViacepModule } from "@brunoc/ngx-viacep";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [FormComponent, ListComponent],
   imports: [
     CommonModule,
-    AddressRoutingModule,
-    NgxViacepModule
+    SharedRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
-export class AddressModule { }
+export class SharedModule { }
