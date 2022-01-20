@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GuardGuard } from '../core/guard/guard.guard';
+import { PageNotFoundComponent } from '../core/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -15,10 +16,14 @@ const routes: Routes = [
       import('./person/person.module').then((m) => m.PersonModule),
   },
   {
-    path: 'product',
+    path: 'products',
     canActivate: [GuardGuard],
     loadChildren: async () =>
       import('./product/product.module').then((m) => m.ProductModule),
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   },
 ];
 

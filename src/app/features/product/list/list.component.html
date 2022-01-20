@@ -1,1 +1,6 @@
-<p>list works!</p>
+<h3>List Product</h3>
+
+<shared-list [headers]="headers"
+  (deleteEntity)="deleteProduct($event)"
+  (searchEntity)="searchProduct($event)"
+></shared-list>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { People } from 'src/app/core/model/people';
 import { PeopleService } from 'src/app/core/services/people/people.service';
@@ -23,15 +23,15 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     this.formPerson = this.formBuilder.group({
       id: '',
-      name: '',
-      age: '',
+      name: ['', [Validators.required]],
+      age: ['', [Validators.min(18), Validators.max(80), Validators.pattern("^[0-9]*$")]],
       email: '',
       phone: '',
     });
 
     const hasId = Boolean(this.activatedRoute.snapshot.params.id);
 
-    this.formTypeLabel = hasId ? 'Atualizar' : 'Cadastrar';
+    this.formTypeLabel = hasId ? 'Update' : 'Register';
   }
 
   submit(event: People): void {
