@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { People } from 'src/app/core/model/people';
-import { PeopleService } from 'src/app/core/services/people/people.service';
+import { Product } from 'src/app/core/model/product';
+import { ProductService } from 'src/app/core/services/product/product.service';
 
 @Component({
   selector: 'app-form',
@@ -16,7 +16,7 @@ export class FormComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private peopleService: PeopleService,
+    private productService: ProductService,
     private router: Router
   ) {}
 
@@ -25,8 +25,9 @@ export class FormComponent implements OnInit {
       id: '',
       name: '',
       department: '',
-      prince: '',
+      price: '',
       comment: '',
+      imageUrl: '',
     });
 
     const hasId = Boolean(this.activatedRoute.snapshot.params.id);
@@ -34,8 +35,8 @@ export class FormComponent implements OnInit {
     this.formTypeLabel = hasId ? 'Update' : 'Register';
   }
 
-  submit(event: People): void {
-    this.peopleService.upsert(event).subscribe(() => {
+  submit(event: Product): void {
+    this.productService.upsert(event).subscribe(() => {
       this.router.navigate(['..'], { relativeTo: this.activatedRoute });
     });
   }

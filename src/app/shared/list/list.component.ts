@@ -45,18 +45,15 @@ export class ListComponent implements OnInit {
   }
 
   editEntity(id: number): void {
-    const obj = {
-      id,
-      callback: this.setEntities,
-    };
-    this.deleteEntity.emit(obj);
+    this.router.navigate([id], { relativeTo: this.activatedRoute });
   }
-
 
   onDeleteEntity(id: number): void {
     const obj = {
       id,
-      callback: this.setEntities
+      callback: (entity) => {
+        this.setEntities(entity);
+      },
     };
     this.deleteEntity.emit(obj);
   }

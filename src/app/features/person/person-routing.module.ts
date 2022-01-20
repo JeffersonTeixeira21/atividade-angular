@@ -24,7 +24,7 @@ export class PersonDataResolver implements Resolve<People> {
   constructor(private peopleService: PeopleService) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<People> {
-    return;
+    return this.peopleService.getOne(route.params.id)
   }
 }
 
@@ -44,7 +44,7 @@ const routes: Routes = [
     path: ':id',
     component: FormComponent,
     resolve: {
-      entity: PeopleDataResolver,
+      entity: PersonDataResolver,
     },
   },
 ];

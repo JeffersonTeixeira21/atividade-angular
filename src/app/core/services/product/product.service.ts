@@ -10,7 +10,7 @@ import { Product } from '../../model/product';
 export class ProductService {
   private _product = new Subject<Product>();
 
-  private baseUrl = `${environment.baseUrl}/product`;
+  private baseUrl = `${environment.baseUrl}/products`;
 
   constructor(private http: HttpClient) {}
 
@@ -28,10 +28,10 @@ export class ProductService {
   }
 
   upsert(product: Product) {
-    product.department = String(product.department);
+    product.price = String(product.price);
 
     if (product.id) {
-      return this.http.patch<Product>(`${this.baseUrl}/${product.id}`, product);
+      return this.http.patch(`${this.baseUrl}/${product.id}`, product);
     } else {
       return this.http.post<Product>(this.baseUrl, product);
     }
