@@ -9,12 +9,18 @@ import { ProductService } from 'src/app/core/services/product/product.service';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  headers: string[] = ['Id', 'Name', 'Department', 'Price', 'Comment', 'Action'];
+  headers: string[] = [
+    'Id',
+    'Name',
+    'Image',
+    'Department',
+    'Price',
+    'Comment',
+    'Action',
+  ];
   constructor(private productService: ProductService) {}
 
-  ngOnInit(): void {
-  
-  }
+  ngOnInit(): void {}
 
   deleteProduct(event: DeleteEvent): void {
     this.productService.delete(event.id).subscribe(() => {

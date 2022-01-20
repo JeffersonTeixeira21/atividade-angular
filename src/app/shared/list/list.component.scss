@@ -1,0 +1,40 @@
+.tabela {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+}
+.tabela button{
+  background-color: #8dc5f8;
+  border: none;
+  width: 100%;
+}
+
+td,
+tr,
+th {
+  text-align: center;
+  padding: 5px;
+  background-color: #ebf4fc;
+}
+.pesquisa {
+  width: 100%;
+  height: 4%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.pesquisa input {
+  width: 20%;
+  height: 65%;
+  background-color: #ebf4fc;
+  border: none;
+}
+.pesquisa button {
+  width: 3%;
+  height: 70%;
+  background-color: #8dc5f8;
+  border: none;
+}

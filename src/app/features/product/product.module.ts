@@ -6,7 +6,7 @@ import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
-
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [FormComponent, ListComponent],
@@ -14,7 +14,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     ProductRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    MatTableModule
   ]
 })
 export class ProductModule { }

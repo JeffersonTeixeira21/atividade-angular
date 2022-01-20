@@ -35,7 +35,7 @@ export class ListComponent implements OnInit {
   search(): void {
     const obj = {
       query: this.inputValue,
-      callback: this.setEntities,
+      callback: (value) => { this.setEntities(value) }
     };
     this.searchEntity.emit(obj);
   }

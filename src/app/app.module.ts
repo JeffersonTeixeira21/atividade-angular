@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { FeaturesModule } from './features/features.module';
 import { CoreModule } from './core/core.module';
 import { RouterModule } from '@angular/router';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
     CoreModule,
     RouterModule.forRoot([]),
     HttpClientModule,
-    FeaturesModule
+    FeaturesModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
