@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AddressRoutingModule } from './address-routing.module';
+import { ProductRoutingModule } from './product-routing.module';
+import { ProductComponent } from './product.component';
 import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
-import { NgxViacepModule } from "@brunoc/ngx-viacep";
 
 
 @NgModule({
-  declarations: [FormComponent, ListComponent],
+  declarations: [ProductComponent, FormComponent, ListComponent],
   imports: [
     CommonModule,
-    AddressRoutingModule,
-    NgxViacepModule
+    ProductRoutingModule
   ]
 })
-export class AddressModule { }
+export class ProductModule { }

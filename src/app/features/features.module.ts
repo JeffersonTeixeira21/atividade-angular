@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FeaturesRoutingModule } from './features-routing.module';
 import { PersonModule } from './person/person.module';
-import { AddressModule } from './address/address.module';
-import { AnimalsModule } from './animals/animals.module';
+import { ProductModule } from './product/product.module';
 
 
 @NgModule({
@@ -13,7 +12,7 @@ import { AnimalsModule } from './animals/animals.module';
     CommonModule,
     FeaturesRoutingModule,
     PersonModule,
-    AnimalsModule
+    ProductModule,
   ]
 })
 export class FeaturesModule { }

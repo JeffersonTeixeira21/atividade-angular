@@ -1,1 +1,5 @@
-<p>list works!</p>
+<shared-list
+  [headers]="headers"
+  (deleteEntity)="deletePerson($event)"
+  (searchEntity)="searchPerson($event)"
+></shared-list>

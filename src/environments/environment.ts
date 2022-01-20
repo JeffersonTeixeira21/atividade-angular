@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://go-dev-frontend.herokuapp.com/api',
-  cepUrl: 'https://viacep.com.br/ws',
+  baseUrl: 'https://go-dev-frontend.herokuapp.com/api'
 };
 
 /*
