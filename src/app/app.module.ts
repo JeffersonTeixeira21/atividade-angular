@@ -7,6 +7,7 @@ import { FeaturesModule } from './features/features.module';
 import { CoreModule } from './core/core.module';
 import { RouterModule } from '@angular/router';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductModule } from './features/product/product.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule.forRoot([]),
     HttpClientModule,
     FeaturesModule,
+    ProductModule,
     NoopAnimationsModule
   ],
   providers: [],

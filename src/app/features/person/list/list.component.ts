@@ -9,7 +9,14 @@ import { PeopleService } from 'src/app/core/services/people/people.service';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  headers: string[] = ['Id', 'Name', 'Age', 'Email', 'Phone', 'Actions'];
+  headers: string[] = [
+    'Id',
+    'Name',
+    'Age',
+    'Email',
+    'Phone',
+    'Actions',
+    ];
   constructor(private peopleService: PeopleService) {}
 
   ngOnInit(): void {}

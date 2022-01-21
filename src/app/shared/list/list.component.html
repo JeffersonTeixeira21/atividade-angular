@@ -1,36 +1,29 @@
 <div class="pesquisa">
   <input type="text" [(ngModel)]="inputValue" (keyup.enter)="search()" />
-  <button (click)="goToAdd()">Add</button>
+  <button mat-raised-button (click)="goToAdd()">Add</button>
 </div>
 
-<div class="tabela" >
- <table>
-  <tr>
-    <th *ngFor="let header of headers">
-      {{ header }}
-    </th>
-  </tr>
-
-  <tr *ngFor="let entity of entities">
-    <td *ngFor="let key of keys">{{ entity[key] }}</td>
-    <td>
-      <button (click)="editEntity(entity.id)">Edit</button>
-      <button (click)="onDeleteEntity(entity.id)">Delete</button>
-    </td>
-  </tr>
- </table>
+<div class="tabela">
+  <table>
+    <tr>
+      <th *ngFor="let header of headers">
+        {{ header }}
+      </th>
+    </tr>
+    <tr *ngFor="let entity of entities">
+      <td *ngFor="let key of keys">{{ entity[key] }}</td>
+      <td>
+        <div class="editButton">
+          <button mat-raised-button (click)="editEntity(entity.id)">
+            Edit
+          </button>
+        </div>
+        <div class="deleteButton">
+          <button mat-raised-button (click)="onDeleteEntity(entity.id)">
+            Delete
+          </button>
+        </div>
+      </td>
+    </tr>
+  </table>
 </div>
-<!--
-<div>
-  <input type="text" [(ngModel)]="inputValue" (keyup.enter)="search()" />
-  <button (click)="goToAdd()">Add</button>
-</div>
-<table mat-table [dataSource]="ngOnInit()" class="mat-elevation-z8">
-  <ng-container [matColumnDef]="column" *ngFor="let column of headers">
-    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
-    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="headers"></tr>
-  <tr mat-row *matRowDef="let row; columns: headers;"></tr>
-</table> -->

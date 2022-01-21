@@ -24,7 +24,7 @@ export class PersonDataResolver implements Resolve<People> {
   constructor(private peopleService: PeopleService) {}
 
   resolve(route: ActivatedRouteSnapshot): Observable<People> {
-    return this.peopleService.getOne(route.params.id)
+    return this.peopleService.getOne(route.params.id);
   }
 }
 
@@ -52,6 +52,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [PeopleDataResolver, PersonDataResolver]
+  providers: [PeopleDataResolver, PersonDataResolver],
 })
 export class PersonRoutingModule {}
