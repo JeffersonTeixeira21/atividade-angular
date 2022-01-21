@@ -23,10 +23,19 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
     this.formPerson = this.formBuilder.group({
       id: '',
-      name: ['', [Validators.required]],
-      age: ['', [Validators.min(18), Validators.max(80), Validators.pattern("^[0-9]*$")]],
+      name: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
+      age: [
+        '',
+        [
+          Validators.min(18),
+          Validators.max(80),
+          Validators.pattern('^[0-9]*$'),
+          Validators.required,
+        ],
+      ],
       email: '',
-      phone: '',
+      phone: ['', [Validators.required]],
+
     });
 
     const hasId = Boolean(this.activatedRoute.snapshot.params.id);
